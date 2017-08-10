@@ -1,3 +1,19 @@
-<aura:component>
-
-</aura:component>	
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="IotController" >
+	<aura:registerEvent name="iotEvent" type="IotEvent"/>
+	<aura:attribute name="accountId" type="String"/>
+	<aura:attribute name="serialNumber" type="String"/>
+	<aura:attribute name="label" type="String" default="表示ラベル" access="global"/>
+	<aura:attribute name="temparature" type="Integer" default="20" access="global"/>
+	<aura:attribute name="delay" type="Integer" default="10" access="global"/>
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+	
+	<div>
+		<ui:inputText label="表示:" value="{!v.label}"/>
+		<ui:inputNumber label="温度:" value="{!v.temparature}"/>
+		<!--<ui:inputNumber label="遅延:" value="{!v.delay}"/>-->
+		<p/>
+		<ui:button aura:id="setButton" buttonTitle="set" class="button" label="設定" press="{!c.doSet}"/>
+		<ui:button aura:id="alertButton" buttonTitle="alart" class="button" label="障害" press="{!c.doAlert}"/>
+	</div>
+	
+</aura:component>
