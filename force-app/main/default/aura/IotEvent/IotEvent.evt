@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="label" type="String"/>
+	<aura:attribute name="temparature" type="String"/>
+</aura:event>

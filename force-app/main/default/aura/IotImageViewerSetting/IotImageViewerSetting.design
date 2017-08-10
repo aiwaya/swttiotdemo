@@ -1,0 +1,4 @@
+<design:component label="Iot Equipment">
+	<design:attribute name="accountId" label="Account ID" />
+	<design:attribute name="serialNumber" label="Serial Number" />
+</design:component>
